@@ -7,7 +7,7 @@ import Favorite from "./favorite";
 
 export default function Home() {
   return (
-    <Router>
+    <Router basename="/MyTuneSpace">
       <Routes>
         <Route path="/" element={<Library />}></Route>
         <Route path="/feed" element={<Feed />}></Route>
