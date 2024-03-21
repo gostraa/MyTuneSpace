@@ -17,7 +17,7 @@ export default function Home() {
     const token = window.localStorage.getItem("token");
     const hash = window.location.hash;
     window.location.hash = "";
-    if (token && hash) {
+    if (!token && hash) {
       const _token = hash.split("&")[0].split("=")[1];
       window.localStorage.setItem("token", _token);
       setToken(_token);
