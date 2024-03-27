@@ -2,13 +2,14 @@ import { Routes, Route } from "react-router-dom";
 import Library from "../Library/library";
 import Feed from "../feed";
 import Trending from "../trending";
-import Player from "../player";
+
 import Favorite from "../favorite";
 import "./home.css";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Login from "../auth/login";
 import { useEffect, useState } from "react";
 import { setClientToken } from "../../spotify";
+import Player from "../Player/player";
 
 export default function Home() {
   const [token, setToken] = useState("");
