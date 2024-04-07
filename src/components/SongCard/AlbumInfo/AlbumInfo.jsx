@@ -10,7 +10,9 @@ export default function AlbumInfo({ album }) {
   return (
     <div className="albumInfo-card">
       <div className="albumName-container">
-        <p>{`${album?.name} - ${artists.join(", ")}`}</p>
+        <div className="marquee">
+          <p>{`${album?.name} - ${artists.join(", ")}`}</p>
+        </div>
       </div>
       <div className="album-info">
         <p>{`${album?.name} is an ${album?.album_type} by ${artists.join(

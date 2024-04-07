@@ -8,15 +8,32 @@
 }
 
 .albumName-container {
+  width: 100%;
+  overflow: hidden;
   font-size: 1.25rem;
   font-weight: 700;
   color: #c3d0e3;
 }
 
+.marquee {
+  white-space: nowrap;
+  display: inline-block;
+  animation: marquee 12s linear infinite;
+  padding-left: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
 .album-info {
   font-size: 14px;
   font-weight: 500;
-  color: #c3d0e3;
+  color: #9aa9c2;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -28,6 +45,6 @@
 .album-release {
   font-size: 0.75rem;
   font-weight: 400;
-  color: #c3d0e3;
+  color: #9aa9c2;
   margin-top: 10px;
 }
