@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import "./AudioPlayer.css";
 import ProgressCircle from "../ProgressCircle/ProgressCircle";
 import { Controls } from "../Controls/Controls";
@@ -29,8 +29,12 @@ export const AudioPlayer = ({
   currentTrack?.album?.artists.forEach((artist) => {
     artists?.push(artist.name);
   });
-
-  const startTimer = () => {
+  const handleNext = useCallback(() => {
+    if (currentIdx < total.length - 1) {
+      setCurrentIdx(currentIdx + 1);
+    } else setCurrentIdx(0);
+  }, [currentIdx, total.length, setCurrentIdx]);
+  const startTimer = useCallback(() => {
     clearInterval(intervalRef.current);
 
     intervalRef.current = setInterval(() => {
@@ -39,8 +43,8 @@ export const AudioPlayer = ({
       } else {
         setTrackProgress(audioRef.current.currentTime);
       }
-    }, [1000]);
-  };
+    }, 1000); // Corrected array syntax error in setInterval
+  }, [handleNext]);
 
   useEffect(() => {
     const togglePlayPause = async () => {
@@ -60,7 +64,7 @@ export const AudioPlayer = ({
     if (audioRef.current.src) {
       togglePlayPause();
     }
-  }, [isPlaying]);
+  }, [isPlaying, startTimer]);
 
   useEffect(() => {
     const playAudio = async () => {
@@ -80,7 +84,7 @@ export const AudioPlayer = ({
     } else {
       isReady.current = true;
     }
-  }, [currentIdx]);
+  }, [currentIdx, audioSrc, startTimer]);
 
   useEffect(() => {
     return () => {
@@ -88,12 +92,6 @@ export const AudioPlayer = ({
       clearInterval(intervalRef.current);
     };
   }, []);
-
-  const handleNext = () => {
-    if (currentIdx < total.length - 1) {
-      setCurrentIdx(currentIdx + 1);
-    } else setCurrentIdx(0);
-  };
 
   const handlePrev = () => {
     if (currentIdx - 1 < 0) setCurrentIdx(total.length - 1);
