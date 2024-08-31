@@ -5,7 +5,9 @@
 }
 
 .player-left-body {
-  width: 37%;
+  width: 47%;
+  height: 57%;
+  margin-left: 10px;
 }
 
 .player-right-body {
