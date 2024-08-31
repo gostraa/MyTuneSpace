@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/MyTuneSpace/static/css/main.fd17b451.css",
-    "main.js": "/MyTuneSpace/static/js/main.ef192a45.js",
+    "main.css": "/MyTuneSpace/static/css/main.44f82b4a.css",
+    "main.js": "/MyTuneSpace/static/js/main.3958eef3.js",
     "static/js/453.ccf900af.chunk.js": "/MyTuneSpace/static/js/453.ccf900af.chunk.js",
     "index.html": "/MyTuneSpace/index.html",
-    "main.fd17b451.css.map": "/MyTuneSpace/static/css/main.fd17b451.css.map",
-    "main.ef192a45.js.map": "/MyTuneSpace/static/js/main.ef192a45.js.map",
+    "main.44f82b4a.css.map": "/MyTuneSpace/static/css/main.44f82b4a.css.map",
+    "main.3958eef3.js.map": "/MyTuneSpace/static/js/main.3958eef3.js.map",
     "453.ccf900af.chunk.js.map": "/MyTuneSpace/static/js/453.ccf900af.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fd17b451.css",
-    "static/js/main.ef192a45.js"
+    "static/css/main.44f82b4a.css",
+    "static/js/main.3958eef3.js"
   ]
 }
